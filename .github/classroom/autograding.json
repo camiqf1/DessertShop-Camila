@@ -1,0 +1,344 @@
+{
+  "tests": [
+    {
+      "name": "Lab3a - Each class has proper inheritance",
+      "setup": "",
+      "run": "mvn test -Dtest=\"Lab3aTests#testInheritance\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Lab3a - DessertItem has the correct attributes",
+      "setup": "",
+      "run": "mvn test -Dtest=\"Lab3aTests#testDessertItemAttributes\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - DessertItem has the correct constructors",
+      "setup": "",
+      "run": "mvn test -Dtest=\"Lab3aTests#testDessertItemConstructors\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - DessertItem has the correct methods",
+      "setup": "",
+      "run": "mvn test -Dtest=\"Lab3aTests#testDessertItemMethods\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - Candy has the correct attributes",
+      "setup": "",
+      "run": "mvn test -Dtest=\"Lab3aTests#testCandyAttributes\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - Candy has the correct constructors",
+      "setup": "",
+      "run": "mvn test -Dtest=\"Lab3aTests#testCandyConstructors\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - Candy has the correct methods",
+      "setup": "",
+      "run": "mvn test -Dtest=\"Lab3aTests#testCandyMethods\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - Cookie has the correct attributes",
+      "setup": "",
+      "run": "mvn test -Dtest=\"Lab3aTests#testCookieAttributes\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - Cookie has the correct constructors",
+      "setup": "",
+      "run": "mvn test -Dtest=\"Lab3aTests#testCookieConstructors\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - Cookie has the correct methods",
+      "setup": "",
+      "run": "mvn test -Dtest=\"Lab3aTests#testCookieMethods\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - IceCream has the correct attributes",
+      "setup": "",
+      "run": "mvn test -Dtest=\"Lab3aTests#testIceCreamAttributes\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - IceCream has the correct constructors",
+      "setup": "",
+      "run": "mvn test -Dtest=\"Lab3aTests#testIceCreamConstructors\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - IceCream has the correct methods",
+      "setup": "",
+      "run": "mvn test -Dtest=\"Lab3aTests#testIceCreamMethods\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - Sundae has the correct attributes",
+      "setup": "",
+      "run": "mvn test -Dtest=\"Lab3aTests#testSundaeAttributes\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - Sundae has the correct constructors",
+      "setup": "",
+      "run": "mvn test -Dtest=\"Lab3aTests#testSundaeConstructors\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - Sundae has the correct methods",
+      "setup": "",
+      "run": "mvn test -Dtest=\"Lab3aTests#testSundaeMethods\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - DessertItem - testGetName",
+      "setup": "",
+      "run": "mvn test -Dtest=\"DessertItemTest#testGetName\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - DessertItem - testSetName",
+      "setup": "",
+      "run": "mvn test -Dtest=\"DessertItemTest#testSetName\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - Candy - testGetCandyWeight",
+      "setup": "",
+      "run": "mvn test -Dtest=\"CandyTest#testGetCandyWeight\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - Candy - testSetCandyWeight",
+      "setup": "",
+      "run": "mvn test -Dtest=\"CandyTest#testSetCandyWeight\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - Candy - testGetPricePerPound",
+      "setup": "",
+      "run": "mvn test -Dtest=\"CandyTest#testGetPricePerPound\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - Candy - testSetPricePerPound",
+      "setup": "",
+      "run": "mvn test -Dtest=\"CandyTest#testSetPricePerPound\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - Cookie - testGetCookieQty",
+      "setup": "",
+      "run": "mvn test -Dtest=\"CookieTest#testGetCookieQty\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - Cookie - testSetCookieQty",
+      "setup": "",
+      "run": "mvn test -Dtest=\"CookieTest#testSetCookieQty\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - Cookie - testGetPricePerDozen",
+      "setup": "",
+      "run": "mvn test -Dtest=\"CookieTest#testGetPricePerDozen\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - Cookie - testSetPricePerDozen",
+      "setup": "",
+      "run": "mvn test -Dtest=\"CookieTest#testGetPricePerDozen\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - IceCream - testGetScoopCount",
+      "setup": "",
+      "run": "mvn test -Dtest=\"IceCreamTest#testGetScoopCount\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - IceCream - testSetScoopCount",
+      "setup": "",
+      "run": "mvn test -Dtest=\"IceCreamTest#testSetScoopCount\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - IceCream - testGetPricePerScoop",
+      "setup": "",
+      "run": "mvn test -Dtest=\"IceCreamTest#testGetPricePerScoop\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - IceCream - testSetPricePerScoop",
+      "setup": "",
+      "run": "mvn test -Dtest=\"IceCreamTest#testSetPricePerScoop\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - Sundae - testGetToppingName",
+      "setup": "",
+      "run": "mvn test -Dtest=\"SundaeTest#testGetToppingName\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - Sundae - testSetToppingName",
+      "setup": "",
+      "run": "mvn test -Dtest=\"SundaeTest#testSetToppingName\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - Sundae - testGetToppingPrice",
+      "setup": "",
+      "run": "mvn test -Dtest=\"SundaeTest#testGetToppingPrice\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Lab3a - Sundae - testSetToppingPrice",
+      "setup": "",
+      "run": "mvn test -Dtest=\"SundaeTest#testSetToppingPrice\" --quiet",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    }
+  ]
+}
