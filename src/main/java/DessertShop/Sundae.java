@@ -1,12 +1,12 @@
 package DessertShop;
 
 public class Sundae extends IceCream {
-    private String toppingName;
-    private double toppingPrice;
+    private String toppingName; // Name of the topping
+    private double toppingPrice; // Price of the topping
 
     // Default Constructor
     public Sundae() {
-        super();
+        super(); // Call the default constructor of IceCream
         this.toppingName = "";
         this.toppingPrice = 0.0;
     }
@@ -43,7 +43,6 @@ public class Sundae extends IceCream {
     // Override calculateCost to include topping price
     @Override
     public double calculateCost() {
-        return + toppingPrice; // Add topping price to the cost of the ice cream
+        return super.calculateCost() + toppingPrice; // Add topping price to the cost of the ice cream
     }
-
-}//end of sundae class
+} // end of sundae class

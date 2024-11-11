@@ -1,43 +1,50 @@
 package DessertShop;
 
-public abstract class IceCream extends DessertItem {
-    //Attributes and Properties
-    private int scoopCount;//number of scoops
-    private double pricePerScoop;//price for scoop
+public class IceCream extends DessertItem {
+    // Attributes
+    private int scoopCount; //Number of scoops
+    private double pricePerScoop; //Price per scoop
 
+    // Default Constructor
+    public IceCream() {
+        super(); //default constructor of DessertItem
+        this.scoopCount = 0;
+        this.pricePerScoop = 0.0;
+    }
+
+    //All-Argument Constructor
     public IceCream(String name, int scoopCount, double pricePerScoop) {
-        super(name);
+        super(name); //Call the all-argument constructor of DessertItem
         this.scoopCount = scoopCount;
         this.pricePerScoop = pricePerScoop;
     }
 
-    public IceCream() {
-
+    // Getter for scoopCount
+    public int getScoopCount() {
+        return scoopCount;
     }
 
-    @Override
-
-    public double calculatorCost() {
-        return scoopCount *  pricePerScoop;
+    // Setter for scoopCount
+    public int setScoopCount(int scoopCount) {
+        this.scoopCount = scoopCount;
+        return this.scoopCount;
     }
 
-    //Getter and Setter price per scoop
+    // Getter for pricePerScoop
     public double getPricePerScoop() {
         return pricePerScoop;
     }
 
-    public void setPricePerScoop(double pricePerScoop) {
+    // Setter for pricePerScoop
+    public double setPricePerScoop(double pricePerScoop) {
         this.pricePerScoop = pricePerScoop;
+        return this.pricePerScoop;
     }
 
-    //Getter and Setter scoop count
-    public int getScoopCount() {
-        return scoopCount;
+    // Override calculateCost method
+    @Override
+    public double calculateCost() {
+        return scoopCount * pricePerScoop; // Cost is number of scoops * price per scoop
     }
-    public void setScoopCount(int scoopCount) {
-        this.scoopCount = scoopCount;
-    }
+}// end of ice cream class
 
-    // Override calculateCost to include topping price
-    public abstract double calculateCost();
-}//end of icecream class
