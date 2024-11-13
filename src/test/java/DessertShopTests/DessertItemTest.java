@@ -11,7 +11,7 @@ public class DessertItemTest {
         // Create an instance using the all-argument constructor
         DessertItem item = new DessertItem("Ice Cream") {
             @Override
-            public double calculatorCost() {
+            public double calculateCost() {
                 return 0;
             }
         };
@@ -25,16 +25,44 @@ public class DessertItemTest {
         // Create an instance using the default constructor
         DessertItem item = new DessertItem() {
             @Override
-            public double calculatorCost() {
+            public double calculateCost() {
                 return 0;
             }
         };
 
         // Set a new name and check if it updates correctly
-        String updatedName = item.setName("Cake");
-        assertEquals("Cake", updatedName, "setName() should return the updated name");
-        assertEquals("Cake", item.getName(), "setName() should update the name correctly");
+        item.setName("Cake");
+        assertEquals("Cake", item.getName(), "setName() should update and return the correct name");
     }
 
-}//end of dessert item test
+    @Test
+    public void testGetTaxPercent() {
+        // Create an instance with a default tax percent
+        DessertItem item = new DessertItem("Candy") {
+            @Override
+            public double calculateCost() {
+                return 0;
+            }
+        };
+
+        // Assert the default tax percent
+        assertEquals(7.25, item.getTaxPercent(), 0.01, "getTaxPercent() should return the default tax percent");
+    }
+
+    @Test
+    public void testSetTaxPercent() {
+        // Create an instance
+        DessertItem item = new DessertItem("Cookie") {
+            @Override
+            public double calculateCost() {
+                return 0;
+            }
+        };
+
+        // Set a new tax percent and verify
+        item.setTaxPercent(8.5);
+        assertEquals(8.5, item.getTaxPercent(), 0.01, "setTaxPercent() should update and return the new tax percent");
+    }
+}//end of dessertItemtest class
+
 

@@ -35,6 +35,23 @@ public class Cookie extends DessertItem {
     public void setPricePerDozen(double pricePerDozen) {
         this.pricePerDozen = pricePerDozen;
     }
+
+    // Override toString method for receipt generation
+    @Override
+    public String toString() {
+        // First line with the cookie name
+        String line1 = String.format("%s Cookies", getName());
+        // Second line with details: quantity and price per dozen
+        String line2Pt1 = String.format("%d cookies @ $%.2f/dozen:", getCookieQty(), getPricePerDozen());
+        // Cost of the item
+        String line2Pt2 = String.format("$%.2f", calculateCost());
+        // Tax for the item
+        String line2Pt3 = String.format("[Tax: $%.2f]", calculateTax());
+
+        // Combine all parts into a formatted string
+        return String.format("%s\n\t%-45s%s%17s", line1, line2Pt1, line2Pt2, line2Pt3);
+    }
 } // end of cookie class
+
 
 

@@ -45,7 +45,8 @@ public class DessertShop {
             }
         }
 
-        // Display order summary
+        // Commented out previous code for printing items and totals
+        /*
         System.out.println("\nItems in the order:");
         double subtotal = 0.0;
         double totalTax = 0.0;
@@ -68,6 +69,10 @@ public class DessertShop {
         System.out.printf("Total Tax: $%.2f\n", totalTax);
         System.out.printf("Total Cost: $%.2f\n", totalCost);
         System.out.printf("Total Items: %d\n", order.itemCount());
+        */
+
+        // Replaced with a single line to print the receipt
+        System.out.println(order);
     }
 
     // Method to prompt user for Candy details
@@ -225,6 +230,6 @@ public class DessertShop {
 
         return new Sundae(name, scoops, pricePerScoop, toppingName, toppingPrice);
     }
+} // end of DessertShop class
 
-}//end of dessert shop class
 

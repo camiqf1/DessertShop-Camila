@@ -43,5 +43,42 @@ public class Order {
         }
         return totalTax;
     }
+
+    // Override toString method for receipt generation
+    @Override
+    public String toString() {
+        // Initialize the receipt string
+        StringBuilder finalOutput = new StringBuilder();
+
+        // Add the receipt header
+        finalOutput.append("------------------------------------------------Receipt-------------------------------------------------\n");
+
+        // Add each item's receipt details
+        for (DessertItem item : order) {
+            finalOutput.append(item.toString()).append("\n");
+        }
+
+        // Add the receipt divider
+        finalOutput.append("-------------------------------------------------------------------------------------------------------\n");
+
+        // Calculate totals
+        double subtotal = orderCost();
+        double totalTax = orderTax();
+        double totalCost = subtotal + totalTax;
+
+        // Add formatted totals to the receipt
+        String subtotalLine = String.format("Order Subtotals: %71s\n", String.format("$%.2f [Tax: $%.2f]", subtotal, totalTax));
+        String totalLine = String.format("Order Total: %78s\n", String.format("$%.2f", totalCost));
+        String itemCountLine = String.format("Total items in the order: %56d\n", itemCount());
+
+        // Append totals to the receipt
+        finalOutput.append(subtotalLine);
+        finalOutput.append(totalLine);
+        finalOutput.append(itemCountLine);
+
+        // Return the final receipt string
+        return finalOutput.toString();
+    }
 } // end of Order class
+
 

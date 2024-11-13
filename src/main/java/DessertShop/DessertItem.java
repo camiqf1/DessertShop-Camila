@@ -20,9 +20,8 @@ public abstract class DessertItem {
     }
 
     // Setter for name
-    public String setName(String name) {
+    public void setName(String name) {
         this.name = name;
-        return this.name;
     }
 
     // Getter for taxPercent
@@ -42,5 +41,5 @@ public abstract class DessertItem {
     public double calculateTax() {
         return (calculateCost() * taxPercent) / 100;
     }
+} // end of DessertItem class
 
-}//end of dessert item class
