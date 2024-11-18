@@ -9,6 +9,7 @@ public class Sundae extends IceCream {
         super(); // Call the default constructor of IceCream
         this.toppingName = "";
         this.toppingPrice = 0.0;
+        setPackaging("Boat"); // Set default packaging
     }
 
     // All-Argument Constructor
@@ -16,6 +17,7 @@ public class Sundae extends IceCream {
         super(name, scoopCount, pricePerScoop); // Call IceCream's constructor
         this.toppingName = toppingName;
         this.toppingPrice = toppingPrice;
+        setPackaging("Boat"); // Set packaging type for Sundae
     }
 
     // Getter for toppingName
@@ -24,9 +26,8 @@ public class Sundae extends IceCream {
     }
 
     // Setter for toppingName
-    public String setToppingName(String toppingName) {
+    public void setToppingName(String toppingName) {
         this.toppingName = toppingName;
-        return this.toppingName;
     }
 
     // Getter for toppingPrice
@@ -35,9 +36,8 @@ public class Sundae extends IceCream {
     }
 
     // Setter for toppingPrice
-    public double setToppingPrice(double toppingPrice) {
+    public void setToppingPrice(double toppingPrice) {
         this.toppingPrice = toppingPrice;
-        return this.toppingPrice;
     }
 
     // Override calculateCost to include topping price
@@ -49,8 +49,8 @@ public class Sundae extends IceCream {
     // Override toString method for receipt generation
     @Override
     public String toString() {
-        // First line with the sundae name and topping
-        String line1 = String.format("%s %s Sundae", getToppingName(), getName());
+        // First line with the sundae name and packaging
+        String line1 = String.format("%s %s Sundae (%s)", getToppingName(), getName(), getPackaging());
         // Second line with details: scoop count and price per scoop
         String line2Pt1 = String.format("%d scoops of %s ice cream @ $%.2f/scoop", getScoopCount(), getName(), getPricePerScoop());
         // Third line with topping details
@@ -64,3 +64,4 @@ public class Sundae extends IceCream {
         return String.format("%s\n\t%-45s\n\t%-45s%s%17s", line1, line2Pt1, line2Pt2, line2Pt3, line2Pt4);
     }
 } // end of sundae class
+

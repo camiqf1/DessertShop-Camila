@@ -31,5 +31,12 @@ public class CandyTest {
         candy.setPricePerPound(5.99);
         assertEquals(5.99, candy.getPricePerPound(), "setPricePerPound() should update the price per pound correctly");
     }
-}//end of candy test
+
+    @Test
+    public void testGetPackaging() {
+        Candy candy = new Candy("Gummy Bears", 1.5, 4.99);
+        assertEquals("Bag", candy.getPackaging(), "getPackaging() should return the correct packaging type");
+    }
+} // end of candy test
+
 

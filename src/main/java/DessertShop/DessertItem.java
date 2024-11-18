@@ -1,8 +1,9 @@
 package DessertShop;
 
-public abstract class DessertItem {
+public abstract class DessertItem implements Packaging {
     private String name;
     private double taxPercent = 7.25; // Explicit Field Initialization
+    private String packaging; // New field for packaging
 
     // Default Constructor
     public DessertItem() {
@@ -34,6 +35,18 @@ public abstract class DessertItem {
         this.taxPercent = taxPercent;
     }
 
+    // Getter for packaging
+    @Override
+    public String getPackaging() {
+        return packaging;
+    }
+
+    // Setter for packaging
+    @Override
+    public void setPackaging(String packaging) {
+        this.packaging = packaging;
+    }
+
     // Abstract Method to calculate the cost of the item
     public abstract double calculateCost();
 
@@ -42,4 +55,5 @@ public abstract class DessertItem {
         return (calculateCost() * taxPercent) / 100;
     }
 } // end of DessertItem class
+
 

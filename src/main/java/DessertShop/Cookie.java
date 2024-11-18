@@ -2,14 +2,15 @@ package DessertShop;
 
 public class Cookie extends DessertItem {
     // Attributes and Properties
-    private int cookieQty; // number of cookies
-    private double pricePerDozen; // price for a dozen cookies
+    private int cookieQty; // Number of cookies
+    private double pricePerDozen; // Price for a dozen cookies
 
     // All-Argument Constructor
     public Cookie(String name, int cookieQty, double pricePerDozen) {
         super(name); // Call the superclass constructor to set the name
         this.cookieQty = cookieQty;
         this.pricePerDozen = pricePerDozen;
+        setPackaging("Box"); // Set the packaging type
     }
 
     // Override calculateCost method
@@ -39,8 +40,8 @@ public class Cookie extends DessertItem {
     // Override toString method for receipt generation
     @Override
     public String toString() {
-        // First line with the cookie name
-        String line1 = String.format("%s Cookies", getName());
+        // First line with the cookie name and packaging
+        String line1 = String.format("%s Cookies (%s)", getName(), getPackaging());
         // Second line with details: quantity and price per dozen
         String line2Pt1 = String.format("%d cookies @ $%.2f/dozen:", getCookieQty(), getPricePerDozen());
         // Cost of the item
@@ -52,6 +53,7 @@ public class Cookie extends DessertItem {
         return String.format("%s\n\t%-45s%s%17s", line1, line2Pt1, line2Pt2, line2Pt3);
     }
 } // end of cookie class
+
 
 
 

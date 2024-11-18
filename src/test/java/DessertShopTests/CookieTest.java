@@ -32,4 +32,10 @@ public class CookieTest {
         assertEquals(6.99, cookie.getPricePerDozen(), "setPricePerDozen() should update the price per dozen correctly");
     }
 
-}//end of cookie test
+    @Test
+    public void testGetPackaging() {
+        Cookie cookie = new Cookie("Chocolate Chip", 24, 5.99);
+        assertEquals("Box", cookie.getPackaging(), "getPackaging() should return the correct packaging type");
+    }
+} // end of cookie test
+

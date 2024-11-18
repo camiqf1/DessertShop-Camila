@@ -31,4 +31,11 @@ public class SundaeTest {
         sundae.setToppingPrice(1.50);
         assertEquals(1.50, sundae.getToppingPrice(), "setToppingPrice() should update the topping price correctly");
     }
-}//end of sundae test
+
+    @Test
+    public void testGetPackaging() {
+        Sundae sundae = new Sundae("Strawberry Sundae", 3, 2.50, "Hot Fudge", 1.25);
+        assertEquals("Boat", sundae.getPackaging(), "getPackaging() should return the correct packaging type");
+    }
+} // end of sundae test
+

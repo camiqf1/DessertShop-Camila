@@ -2,6 +2,7 @@ package DessertShopTests;
 
 import DessertShop.DessertItem;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class DessertItemTest {
@@ -63,6 +64,22 @@ public class DessertItemTest {
         item.setTaxPercent(8.5);
         assertEquals(8.5, item.getTaxPercent(), 0.01, "setTaxPercent() should update and return the new tax percent");
     }
-}//end of dessertItemtest class
+
+    @Test
+    public void testSetPackaging() {
+        // Create an instance
+        DessertItem item = new DessertItem("Brownie") {
+            @Override
+            public double calculateCost() {
+                return 0;
+            }
+        };
+
+        // Set packaging and verify
+        item.setPackaging("Tray");
+        assertEquals("Tray", item.getPackaging(), "setPackaging() should update and return the correct packaging");
+    }
+} // end of DessertItemTest class
+
 
 

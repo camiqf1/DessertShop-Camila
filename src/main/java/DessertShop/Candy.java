@@ -10,6 +10,7 @@ public class Candy extends DessertItem {
         super(name); // Call the superclass constructor to set the name
         this.weight = weight;
         this.pricePerPound = pricePerPound;
+        setPackaging("Bag"); // Set the packaging type
     }
 
     // Override calculateCost method
@@ -39,8 +40,8 @@ public class Candy extends DessertItem {
     // Override toString method for receipt generation
     @Override
     public String toString() {
-        // First line with the candy name
-        String line1 = String.format("%s", getName());
+        // First line with the candy name and packaging
+        String line1 = String.format("%s (%s)", getName(), getPackaging());
         // Second line with details: weight and price per pound
         String line2Pt1 = String.format("%.2f lbs. @ $%.2f/lb.:", getCandyWeight(), getPricePerPound());
         // Cost of the item
@@ -52,4 +53,5 @@ public class Candy extends DessertItem {
         return String.format("%s\n\t%-45s%s%17s", line1, line2Pt1, line2Pt2, line2Pt3);
     }
 } // end of candy class
+
 

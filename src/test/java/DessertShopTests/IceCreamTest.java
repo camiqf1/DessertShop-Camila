@@ -52,5 +52,16 @@ public class IceCreamTest {
         assertEquals(3.00, iceCream.getPricePerScoop(), "setPricePerScoop() should update the price per scoop correctly");
     }
 
-}//end of ice cream test
+    @Test
+    public void testGetPackaging() {
+        IceCream iceCream = new IceCream("Vanilla", 3, 2.50) {
+            @Override
+            public double calculateCost() {
+                return 0;
+            }
+        };
+        assertEquals("Bowl", iceCream.getPackaging(), "getPackaging() should return the correct packaging type");
+    }
+} // end of ice cream test
+
 
