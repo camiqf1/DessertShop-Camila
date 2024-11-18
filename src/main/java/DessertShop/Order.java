@@ -2,12 +2,14 @@ package DessertShop;
 
 import java.util.ArrayList;
 
-public class Order {
+public class Order implements Payable { // Implement Payable interface
     private ArrayList<DessertItem> order; // Attribute to store the list of DessertItem objects
+    private PayType payMethod; // Attribute to store payment method
 
     // Constructor
     public Order() {
         this.order = new ArrayList<>(); // Initialize the ArrayList
+        this.payMethod = PayType.CASH; // Default payment method
     }
 
     // Method to return the ArrayList of DessertItem objects
@@ -76,9 +78,24 @@ public class Order {
         finalOutput.append(totalLine);
         finalOutput.append(itemCountLine);
 
+        // Append payment method to the receipt
+        finalOutput.append(String.format("Payment Method: %77s\n", payMethod.name()));
+
         // Return the final receipt string
         return finalOutput.toString();
     }
+
+    // Implement Payable methods
+    @Override
+    public PayType getPayType() {
+        return this.payMethod;
+    }
+
+    @Override
+    public void setPayType(PayType payType) {
+        this.payMethod = payType;
+    }
 } // end of Order class
+
 
 

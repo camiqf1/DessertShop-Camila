@@ -45,31 +45,22 @@ public class DessertShop {
             }
         }
 
-        // Commented out previous code for printing items and totals
-        /*
-        System.out.println("\nItems in the order:");
-        double subtotal = 0.0;
-        double totalTax = 0.0;
+        // Prompt for payment method
+        System.out.println("Please select a payment method (CASH, CARD, PHONE): ");
+        String paymentMethod = sIn.nextLine().toUpperCase();
 
-        for (DessertItem item : order.getOrderList()) {
-            double itemCost = item.calculateCost();
-            double itemTax = item.calculateTax();
-            subtotal += itemCost;
-            totalTax += itemTax;
-
-            // Print item details in tabular format
-            System.out.printf("%-25s$%-8.2f[Tax: $%.2f]\n", item.getName(), itemCost, itemTax);
+        boolean validPayment = false;
+        for (Payable.PayType type : Payable.PayType.values()) {
+            if (paymentMethod.equals(type.name())) {
+                order.setPayType(Payable.PayType.valueOf(paymentMethod));
+                validPayment = true;
+                break;
+            }
         }
 
-        // Calculate totals
-        double totalCost = subtotal + totalTax;
-
-        // Print order summary
-        System.out.printf("\nSubtotal: $%.2f\n", subtotal);
-        System.out.printf("Total Tax: $%.2f\n", totalTax);
-        System.out.printf("Total Cost: $%.2f\n", totalCost);
-        System.out.printf("Total Items: %d\n", order.itemCount());
-        */
+        if (!validPayment) {
+            System.out.println("Invalid payment method! Defaulting to CASH.");
+        }
 
         // Replaced with a single line to print the receipt
         System.out.println(order);
@@ -231,5 +222,6 @@ public class DessertShop {
         return new Sundae(name, scoops, pricePerScoop, toppingName, toppingPrice);
     }
 } // end of DessertShop class
+
 
 
