@@ -1,5 +1,6 @@
 package DessertShop;
 
+import java.util.Collections;
 import java.util.Scanner;
 
 public class DessertShop {
@@ -61,6 +62,9 @@ public class DessertShop {
         if (!validPayment) {
             System.out.println("Invalid payment method! Defaulting to CASH.");
         }
+
+        // Sort the items in the order by cost before printing the receipt
+        Collections.sort(order.getOrderList());
 
         // Replaced with a single line to print the receipt
         System.out.println(order);
@@ -222,6 +226,7 @@ public class DessertShop {
         return new Sundae(name, scoops, pricePerScoop, toppingName, toppingPrice);
     }
 } // end of DessertShop class
+
 
 
 

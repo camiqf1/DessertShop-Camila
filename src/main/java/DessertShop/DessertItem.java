@@ -1,6 +1,6 @@
 package DessertShop;
 
-public abstract class DessertItem implements Packaging {
+public abstract class DessertItem implements Packaging, Comparable<DessertItem> { // Implement Comparable interface
     private String name;
     private double taxPercent = 7.25; // Explicit Field Initialization
     private String packaging; // New field for packaging
@@ -54,6 +54,23 @@ public abstract class DessertItem implements Packaging {
     public double calculateTax() {
         return (calculateCost() * taxPercent) / 100;
     }
+
+    // Implement Comparable's compareTo method
+    @Override
+    public int compareTo(DessertItem other) {
+        // Compare based on cost
+        double thisCost = this.calculateCost();
+        double otherCost = other.calculateCost();
+
+        if (thisCost < otherCost) {
+            return -1;
+        } else if (thisCost > otherCost) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
 } // end of DessertItem class
+
 
 

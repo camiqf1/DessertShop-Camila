@@ -79,7 +79,73 @@ public class DessertItemTest {
         item.setPackaging("Tray");
         assertEquals("Tray", item.getPackaging(), "setPackaging() should update and return the correct packaging");
     }
+
+    // Test cases for compareTo(DessertItem)
+
+    @Test
+    public void testCompareTo_LessThan() {
+        // Create two DessertItem instances with different costs
+        DessertItem item1 = new DessertItem("Candy") {
+            @Override
+            public double calculateCost() {
+                return 5.0;
+            }
+        };
+
+        DessertItem item2 = new DessertItem("Ice Cream") {
+            @Override
+            public double calculateCost() {
+                return 10.0;
+            }
+        };
+
+        // Assert that compareTo returns -1 when the first item's cost is less
+        assertEquals(-1, item1.compareTo(item2), "compareTo() should return -1 when the first item costs less");
+    }
+
+    @Test
+    public void testCompareTo_GreaterThan() {
+        // Create two DessertItem instances with different costs
+        DessertItem item1 = new DessertItem("Candy") {
+            @Override
+            public double calculateCost() {
+                return 15.0;
+            }
+        };
+
+        DessertItem item2 = new DessertItem("Ice Cream") {
+            @Override
+            public double calculateCost() {
+                return 10.0;
+            }
+        };
+
+        // Assert that compareTo returns 1 when the first item's cost is greater
+        assertEquals(1, item1.compareTo(item2), "compareTo() should return 1 when the first item costs more");
+    }
+
+    @Test
+    public void testCompareTo_Equal() {
+        // Create two DessertItem instances with the same cost
+        DessertItem item1 = new DessertItem("Candy") {
+            @Override
+            public double calculateCost() {
+                return 10.0;
+            }
+        };
+
+        DessertItem item2 = new DessertItem("Ice Cream") {
+            @Override
+            public double calculateCost() {
+                return 10.0;
+            }
+        };
+
+        // Assert that compareTo returns 0 when the costs are equal
+        assertEquals(0, item1.compareTo(item2), "compareTo() should return 0 when both items cost the same");
+    }
 } // end of DessertItemTest class
+
 
 
 
