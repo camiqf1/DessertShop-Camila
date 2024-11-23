@@ -17,9 +17,41 @@ public class Order implements Payable { // Implement Payable interface
         return this.order;
     }
 
-    // Method to add a DessertItem
+    // Updated add method
     public DessertItem add(DessertItem item) {
-        this.order.add(item); // Add item to the list
+        // If the item to be added is of type Candy
+        if (item instanceof Candy) {
+            Candy newCandy = (Candy) item;
+            for (DessertItem existingItem : order) {
+                if (existingItem instanceof Candy) {
+                    Candy existingCandy = (Candy) existingItem;
+                    // Check if they are the same using isSameAs
+                    if (existingCandy.isSameAs(newCandy)) {
+                        // Add the candy weight to the existing candy
+                        existingCandy.setCandyWeight(existingCandy.getCandyWeight() + newCandy.getCandyWeight());
+                        return item; // Do not add the new item
+                    }
+                }
+            }
+        }
+        // If the item to be added is of type Cookie
+        else if (item instanceof Cookie) {
+            Cookie newCookie = (Cookie) item;
+            for (DessertItem existingItem : order) {
+                if (existingItem instanceof Cookie) {
+                    Cookie existingCookie = (Cookie) existingItem;
+                    // Check if they are the same using isSameAs
+                    if (existingCookie.isSameAs(newCookie)) {
+                        // Add the cookie quantity to the existing cookie
+                        existingCookie.setCookieQty(existingCookie.getCookieQty() + newCookie.getCookieQty());
+                        return item; // Do not add the new item
+                    }
+                }
+            }
+        }
+
+        // If no match is found, add the item to the order
+        this.order.add(item);
         return item; // Return the added item
     }
 
@@ -96,6 +128,8 @@ public class Order implements Payable { // Implement Payable interface
         this.payMethod = payType;
     }
 } // end of Order class
+
+
 
 
 

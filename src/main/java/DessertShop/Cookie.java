@@ -1,6 +1,7 @@
 package DessertShop;
 
-public class Cookie extends DessertItem {
+// Cookie class implementing DessertItem and SameItem<Cookie>
+public class Cookie extends DessertItem implements SameItem<Cookie> {
     // Attributes and Properties
     private int cookieQty; // Number of cookies
     private double pricePerDozen; // Price for a dozen cookies
@@ -17,6 +18,16 @@ public class Cookie extends DessertItem {
     @Override
     public double calculateCost() {
         return (cookieQty / 12.0) * pricePerDozen; // Calculate cost based on quantity and price per dozen
+    }
+
+    // SameItem interface implementation
+    @Override
+    public boolean isSameAs(Cookie otherCookie) {
+        if (otherCookie == null) {
+            return false;
+        }
+        return this.getName().equals(otherCookie.getName()) &&
+               this.pricePerDozen == otherCookie.pricePerDozen;
     }
 
     // Getter and Setter for cookieQty
@@ -52,7 +63,11 @@ public class Cookie extends DessertItem {
         // Combine all parts into a formatted string
         return String.format("%s\n\t%-45s%s%17s", line1, line2Pt1, line2Pt2, line2Pt3);
     }
-} // end of cookie class
+}
+
+
+
+
 
 
 

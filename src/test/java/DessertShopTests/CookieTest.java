@@ -37,5 +37,35 @@ public class CookieTest {
         Cookie cookie = new Cookie("Chocolate Chip", 24, 5.99);
         assertEquals("Box", cookie.getPackaging(), "getPackaging() should return the correct packaging type");
     }
-} // end of cookie test
+
+    // Test cases for isSameAs(Cookie)
+
+    @Test
+    public void testIsSameAsTrue() {
+        Cookie cookie1 = new Cookie("Chocolate Chip", 24, 5.99); // Same name, price per dozen
+        Cookie cookie2 = new Cookie("Chocolate Chip", 12, 5.99); // Different quantities
+        assertTrue(cookie1.isSameAs(cookie2), "isSameAs() should return true for cookies with the same name and price per dozen but different quantities");
+    }
+
+    @Test
+    public void testIsSameAsFalseDifferentPrice() {
+        Cookie cookie1 = new Cookie("Chocolate Chip", 24, 5.99); // Same name, different price per dozen
+        Cookie cookie2 = new Cookie("Chocolate Chip", 24, 6.99); // Same quantities
+        assertFalse(cookie1.isSameAs(cookie2), "isSameAs() should return false for cookies with the same name but different price per dozen");
+    }
+
+    @Test
+    public void testIsSameAsFalseDifferentName() {
+        Cookie cookie1 = new Cookie("Chocolate Chip", 24, 5.99); // Different name, same price per dozen
+        Cookie cookie2 = new Cookie("Oatmeal Raisin", 24, 5.99); // Same quantities
+        assertFalse(cookie1.isSameAs(cookie2), "isSameAs() should return false for cookies with different names but the same price per dozen");
+    }
+
+    @Test
+    public void testIsSameAsFalseNull() {
+        Cookie cookie1 = new Cookie("Chocolate Chip", 24, 5.99);
+        assertFalse(cookie1.isSameAs(null), "isSameAs() should return false when comparing with null");
+    }
+}// end of cookie test
+
 

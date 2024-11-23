@@ -1,7 +1,7 @@
 package DessertShop;
 
-public class Candy extends DessertItem {
-    // Attributes and Properties
+// Candy class implementing DessertItem and SameItem<Candy>
+public class Candy extends DessertItem implements SameItem<Candy> {
     private double weight; // Weight in pounds
     private double pricePerPound; // Price per pound
 
@@ -11,6 +11,16 @@ public class Candy extends DessertItem {
         this.weight = weight;
         this.pricePerPound = pricePerPound;
         setPackaging("Bag"); // Set the packaging type
+    }
+
+    // Implement isSameAs from SameItem interface
+    @Override
+    public boolean isSameAs(Candy otherCandy) {
+        if (otherCandy == null) {
+            return false;
+        }
+        return this.getName().equals(otherCandy.getName()) &&
+                this.pricePerPound == otherCandy.pricePerPound;
     }
 
     // Override calculateCost method
@@ -53,5 +63,9 @@ public class Candy extends DessertItem {
         return String.format("%s\n\t%-45s%s%17s", line1, line2Pt1, line2Pt2, line2Pt3);
     }
 } // end of candy class
+
+
+
+
 
 
