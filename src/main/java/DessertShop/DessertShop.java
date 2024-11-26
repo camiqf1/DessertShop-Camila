@@ -5,69 +5,84 @@ import java.util.Scanner;
 
 public class DessertShop {
     public static void main(String[] args) {
-        Order order = new Order(); // Create a new order
         Scanner sIn = new Scanner(System.in);
-        String choice;
-        DessertItem orderItem;
+        boolean closed = false;
 
-        boolean done = false;
-        while (!done) {
-            System.out.println("\n1: Candy");
-            System.out.println("2: Cookie");
-            System.out.println("3: Ice Cream");
-            System.out.println("4: Sundae");
+        System.out.println("Welcome to the Dessert Shop!");
 
-            System.out.print("\nWhat would you like to add to the order? (1-4, Enter for done): ");
-            choice = sIn.nextLine();
+        while (!closed) { // Continuous loop for starting a new order
+            Order order = new Order(); // Create a new order
+            String choice;
+            DessertItem orderItem;
+            boolean done = false;
 
-            if (choice.equals("")) {
-                done = true;
-            } else {
-                switch (choice) {
-                    case "1":
-                        orderItem = userPromptCandy();
-                        order.add(orderItem);
-                        break;
-                    case "2":
-                        orderItem = userPromptCookie();
-                        order.add(orderItem);
-                        break;
-                    case "3":
-                        orderItem = userPromptIceCream();
-                        order.add(orderItem);
-                        break;
-                    case "4":
-                        orderItem = userPromptSundae();
-                        order.add(orderItem);
-                        break;
-                    default:
-                        System.out.println("Invalid choice. Please select a valid option.");
+            System.out.println("\nStarting a new order...");
+
+            while (!done) {
+                System.out.println("\n1: Candy");
+                System.out.println("2: Cookie");
+                System.out.println("3: Ice Cream");
+                System.out.println("4: Sundae");
+
+                System.out.print("\nWhat would you like to add to the order? (1-4, Enter for done): ");
+                choice = sIn.nextLine();
+
+                if (choice.equals("")) {
+                    done = true; // User pressed Enter, finish the order
+                } else {
+                    switch (choice) {
+                        case "1":
+                            orderItem = userPromptCandy();
+                            order.add(orderItem);
+                            break;
+                        case "2":
+                            orderItem = userPromptCookie();
+                            order.add(orderItem);
+                            break;
+                        case "3":
+                            orderItem = userPromptIceCream();
+                            order.add(orderItem);
+                            break;
+                        case "4":
+                            orderItem = userPromptSundae();
+                            order.add(orderItem);
+                            break;
+                        default:
+                            System.out.println("Invalid choice. Please select a valid option.");
+                    }
                 }
             }
-        }
 
-        // Prompt for payment method
-        System.out.println("Please select a payment method (CASH, CARD, PHONE): ");
-        String paymentMethod = sIn.nextLine().toUpperCase();
+            // Prompt for payment method
+            System.out.println("\nPlease select a payment method (CASH, CARD, PHONE): ");
+            String paymentMethod = sIn.nextLine().toUpperCase();
 
-        boolean validPayment = false;
-        for (Payable.PayType type : Payable.PayType.values()) {
-            if (paymentMethod.equals(type.name())) {
-                order.setPayType(Payable.PayType.valueOf(paymentMethod));
-                validPayment = true;
-                break;
+            boolean validPayment = false;
+            for (Payable.PayType type : Payable.PayType.values()) {
+                if (paymentMethod.equals(type.name())) {
+                    order.setPayType(Payable.PayType.valueOf(paymentMethod));
+                    validPayment = true;
+                    break;
+                }
             }
+
+            if (!validPayment) {
+                System.out.println("Invalid payment method! Defaulting to CASH.");
+                order.setPayType(Payable.PayType.CASH);
+            }
+
+            // Sort the items in the order by cost before printing the receipt
+            Collections.sort(order.getOrderList());
+
+            // Print the receipt
+            System.out.println(order);
+
+            // Pause and prompt user to start a new order
+            System.out.println("\nPress Enter to start a new order...");
+            sIn.nextLine();
         }
 
-        if (!validPayment) {
-            System.out.println("Invalid payment method! Defaulting to CASH.");
-        }
-
-        // Sort the items in the order by cost before printing the receipt
-        Collections.sort(order.getOrderList());
-
-        // Replaced with a single line to print the receipt
-        System.out.println(order);
+        sIn.close();
     }
 
     // Method to prompt user for Candy details
@@ -225,7 +240,8 @@ public class DessertShop {
 
         return new Sundae(name, scoops, pricePerScoop, toppingName, toppingPrice);
     }
-} // end of DessertShop class
+}// end of class
+
 
 
 
