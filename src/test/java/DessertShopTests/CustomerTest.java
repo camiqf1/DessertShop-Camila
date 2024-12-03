@@ -45,4 +45,5 @@ public class CustomerTest {
         customer.addToHistory(order2);
         assertEquals(2, customer.getOrderHistory().size(), "getOrderHistory() should return all orders placed by the customer");
     }
-}// end of costumerTest class
+}// end of Costumertest class
+

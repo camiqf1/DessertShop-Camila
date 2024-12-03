@@ -8,31 +8,31 @@ public class Customer {
     private int custID; // Unique customer ID
     private static int nextCustID = 1000; // Static field for unique customer IDs
 
-    // Constructor
+    // Constructor that takes a single argument for custName
     public Customer(String custName) {
         this.custName = custName;
         this.orderHistory = new ArrayList<>();
-        this.custID = nextCustID; // Assign the next customer ID
-        nextCustID++; // Static field for the next customer
+        this.custID = nextCustID; // Assign the next available customer ID
+        nextCustID++; // Increment static field for next customer ID
     }
 
-    // Getter customer name
+    // Getter for customer name
     public String getName() {
         return custName;
     }
 
-    // Setter customer name
+    // Setter for customer name
     public String setName(String n) {
         this.custName = n;
-        return this.custName;
+        return custName;
     }
 
-    // Getter customer ID
+    // Getter for customer ID
     public int getID() {
         return custID;
     }
 
-    // Getter order history
+    // Getter for order history
     public ArrayList<Order> getOrderHistory() {
         return orderHistory;
     }
@@ -41,8 +41,4 @@ public class Customer {
     public void addToHistory(Order o) {
         orderHistory.add(o);
     }
-
-    // The customer ID is unique, so it will be automatically assigned when the object is created
-
 }// end of costumer class
-
