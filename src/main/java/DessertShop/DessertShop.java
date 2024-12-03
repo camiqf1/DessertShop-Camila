@@ -135,7 +135,8 @@ public class DessertShop {
     private static void adminModule(Scanner sIn) {
         boolean exit = false;
         while (!exit) { // Continuous loop for Admin Module
-            System.out.println("\n1: Shop Customer List");
+            System.out.println("\nAdmin Module");
+            System.out.println("1: Shop Customer List");
             System.out.println("2: Customer Order History");
             System.out.println("3: Best Customer");
             System.out.println("4: Exit Admin Module");
@@ -346,9 +347,9 @@ public class DessertShop {
 
         return new Sundae(name, scoops, pricePerScoop, toppingName, toppingPrice);
     }
-
-
 }// end of DessertShop
+
+
 
 
 
